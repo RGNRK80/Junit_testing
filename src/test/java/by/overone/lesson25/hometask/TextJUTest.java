@@ -2,6 +2,8 @@ package by.overone.lesson25.hometask;
 
 import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TextJUTest {
@@ -45,9 +47,11 @@ class TextJUTest {
     @Test
     @DisplayName("TEST: is StrEq Work? ")
     void isStrEqWork() {
+        ArrayList<String> st =new ArrayList<>();
+        st.add("testing1");
 
-        //assertEquals(new TextJU("omg").strEq("omg"),"Cool");
-        //assertEquals(new TextJU("omg").strEq((String)"omg1"),"Bad");
+        assertEquals(new TextJU("omg").strEq(st),"Bad");
+
     }
 
 
