@@ -5,6 +5,9 @@ import java.util.Arrays;
 
 public class TextJU {
     String val;
+    ArrayList valArr=new ArrayList();
+
+
 
     public TextJU(String val) {
         this.val = val;
@@ -40,9 +43,7 @@ public class TextJU {
 
      String strEq (ArrayList<String> obj){
         String rezult= "Bad";
-
-        if (this.val.equals(obj)) {rezult =  "Cool";}
-
+        if (this.valArr.equals(obj)) {rezult =  "Cool";}
         return rezult;
     }
 
