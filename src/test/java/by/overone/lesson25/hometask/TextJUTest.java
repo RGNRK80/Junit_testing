@@ -1,8 +1,12 @@
 package by.overone.lesson25.hometask;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,7 +19,7 @@ class TextJUTest {
 
         @Test
         @DisplayName("TEST: number of words")
-        @RepeatedTest(5)
+        @RepeatedTest(7)
         void isNumOfWordsWorks () {
             assertEquals(new TextJU().numOfWords(" mAsha myla ramu i razbila "), 5);
             assertEquals(stest.numOfWords(str), 6);
@@ -26,13 +30,14 @@ class TextJUTest {
         @Disabled("for try")
         @DisplayName("TEST: Trim And Change A(a) ")
         void isTrimAndChangeAWorks () {
-            assertEquals(new TextJU().trimAndChangeA(" mAsha myla ramu i razbila "), "m%sh% myl% r%mu i r%zbil%");
+            assertEquals(new TextJU().trimAndChangeA(" mAsha myla ramu i razbila "),
+                    "m%sh% myl% r%mu i r%zbil%");
             assertEquals(stest.trimAndChangeA(str), "m%sh% myl% r%mu i r%zbil% snov%");
         }
 
 
-        @Test
-        @RepeatedTest(7)
+    @ParameterizedTest
+    @MethodSource("dataForCheckStrvoid")
         @DisplayName("TEST: is String is void ")
         void isStrvoidWorks () {
             assertTrue(stest.strvoid(""));
@@ -54,6 +59,11 @@ class TextJUTest {
             assertEquals(stest.strEq(st), "Bad");
 
         }
+
+
+    private static Stream<Arguments> dataForCheckStrvoid(){
+        return Stream.of(Arguments.of("",true), Arguments.of(" c",false), Arguments.of(" ",false));
+    }
 
 
 }

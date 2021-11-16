@@ -23,6 +23,11 @@ public class Main {
         System.out.println(stest2.strEq(strArrLisst));
        // System.out.println(stest2.strEq(intArrLisst));
 
+        Car car1=new Car(new Color("Red"),new Engine(100),Types.CUPE);
+        System.out.println(car1);
+
+        System.out.println(Types.valueOf("CUPE"));
+
 
 
 
