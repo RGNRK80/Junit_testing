@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TextJUTest {
+public class TextJUTest {
 
 
         String str = new String(" mAsha myla ramu i razbila snova");
