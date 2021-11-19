@@ -7,14 +7,8 @@ import org.junit.platform.suite.api.Suite;
 import org.junit.platform.suite.api.SuiteDisplayName;
 
 @Suite
-//@RunWith(JUnitPlatform.class)
 @SuiteDisplayName("Test ---------Suite")
-//@IncludeTags("production")
-//@SelectPackages("by.overone.lesson25.hometask")
-
 @SelectClasses({ColorTest.class, EngineTest.class, TextJUTest.class, TypesTest.class})
-
-
 
 public class TestSuite {
 
